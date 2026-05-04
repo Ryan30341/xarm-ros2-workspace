@@ -1,0 +1,5 @@
+# Hiwonder/LewanSoul xArm 1S USB HID rule
+# Allows non-root access to the xArm's USB HID interface
+# Install: sudo cp 99-hiwonder-xarm.rules /etc/udev/rules.d/
+# Reload: sudo udevadm control --reload-rules && sudo udevadm trigger
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="5750", MODE="0666", GROUP="plugdev"
